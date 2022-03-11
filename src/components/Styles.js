@@ -10,6 +10,11 @@ export const StyledDiv = styled.div`
 	margin-right: 30vw;
 	height: 80vh;
 	border-radius: 5px;
+	@media (max-width: 700px) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
 `
 
 export const H1 = styled.h1`

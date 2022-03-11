@@ -1,47 +1,52 @@
-import { Formik } from "formik"
+import { Formik, ErrorMessage } from "formik"
 import { StyledForm, StyledField, Submit, ShortDiv, LongDiv, P, Label } from "./Styles"
+import { validation } from "../validation/RegistroValidation"
 
 export const Formulario = () => {
 	return (
-		<Formik
-			initialValues={{ name: "", lastname: "", email: "", direction: "", country: "", city: "", more: "Cuéntanos aquí..." }}
-			onSubmit={() => {
-				alert("datos enviados correctamente")
-			}}>
+		<Formik validationSchema={validation} initialValues={{ nombre: "", apellido: "", email: "", direccion: "", pais: "", ciudad: "", mas: "" }}>
 			<StyledForm>
 				<Label>
 					<P>Nombre</P>
 					<P>Apellidos</P>
 				</Label>
 				<ShortDiv>
-					<StyledField name="name" type="text" />
-					<StyledField name="lastname" type="text" />
-				</ShortDiv>
+					<StyledField name="nombre" type="text" required />
 
+					<StyledField name="apellido" type="text" required />
+				</ShortDiv>
+				<ErrorMessage name="nombre" />
+				<br />
+				<ErrorMessage name="apellido" />
 				<Label>Email</Label>
 				<ShortDiv>
-					<StyledField name="email" type="email" />
+					<StyledField name="email" type="email" required />
 				</ShortDiv>
+				<ErrorMessage name="email" />
+
 				<Label>
 					<P>Direccion</P>
 				</Label>
 				<ShortDiv>
-					<StyledField name="direction" type="text" />
+					<StyledField name="direccion" type="text" required />
 				</ShortDiv>
+				<ErrorMessage name="direccion" />
 				<Label>
 					<P>País</P>
 					<P>Ciudad</P>
 				</Label>
 				<ShortDiv>
-					<StyledField name="country" type="text" />
-					<StyledField name="city" type="text" />
+					<StyledField name="pais" type="text" required />
+					<StyledField name="ciudad" type="text" required />
 				</ShortDiv>
+				<ErrorMessage name="pais" />
+				<ErrorMessage name="ciudad" />
 
 				<Label>
 					<P>Sobre Ti</P>
 				</Label>
 				<LongDiv>
-					<StyledField name="more" type="text" tex />
+					<StyledField name="mas" type="text" placeholder="Cuentanos más aqí...." />
 				</LongDiv>
 
 				<Submit type="submit">Enviar</Submit>
