@@ -2,7 +2,7 @@ import { Formik, ErrorMessage } from "formik"
 import { StyledForm, StyledField, Submit, ShortDiv, LongDiv, P, Label } from "./Styles"
 import { validation } from "../validation/RegistroValidation"
 
-export const Formulario = () => {
+export const Formulario = ({ resetForm }) => {
 	return (
 		<Formik
 			validationSchema={validation}
