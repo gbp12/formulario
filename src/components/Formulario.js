@@ -4,8 +4,14 @@ import { validation } from "../validation/RegistroValidation"
 
 export const Formulario = () => {
 	return (
-		<Formik validationSchema={validation} initialValues={{ nombre: "", apellido: "", email: "", direccion: "", pais: "", ciudad: "", mas: "" }}>
-			<StyledForm>
+		<Formik
+			validationSchema={validation}
+			initialValues={{ nombre: "", apellido: "", email: "", direccion: "", pais: "", ciudad: "", mas: "" }}
+			onSubmit={(values) => {
+				alert(`Bienvenido ${values.nombre} ${values.apellido}`)
+				document.getElementById("formulario").reset()
+			}}>
+			<StyledForm id="formulario">
 				<Label>
 					<P>Nombre</P>
 					<P>Apellidos</P>
@@ -49,7 +55,9 @@ export const Formulario = () => {
 					<StyledField name="mas" type="text" placeholder="Cuentanos más aqí...." />
 				</LongDiv>
 
-				<Submit type="submit">Enviar</Submit>
+				<Submit type="submit" onClick={resetForm}>
+					Enviar
+				</Submit>
 			</StyledForm>
 		</Formik>
 	)
