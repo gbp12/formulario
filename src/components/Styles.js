@@ -38,7 +38,7 @@ export const StyledForm = styled(Form)`
 export const StyledField = styled(Field)`
 	padding: 10px;
 	border: none;
-	background-color: rgb(248, 235, 215);
+	background-color: rgb(251, 215, 159);
 	margin: 5px;
 	width: 100%;
 `
