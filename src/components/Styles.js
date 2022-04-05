@@ -6,14 +6,17 @@ export const StyledDiv = styled.div`
 	justify-content: center;
 	background-color: #fff;
 	margin-top: 10vh;
-	margin-left: 30vw;
-	margin-right: 30vw;
-	height: 80vh;
+	width: 45%;
+	margin-left: 25%;
+	height: 70vh;
 	border-radius: 5px;
-	@media (max-width: 700px) {
-		width: 100%;
-		margin-left: 0;
+	@media (max-width: 800px) {
+		width: 70%;
+		margin-left: 15%;
+		margin-top: 0;
+		margin-bottom: 0;
 		margin-right: 0;
+		height: 100%;
 	}
 `
 
