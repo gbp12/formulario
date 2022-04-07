@@ -8,15 +8,20 @@ export const StyledDiv = styled.div`
 	margin-top: 10vh;
 	width: 45%;
 	margin-left: 25%;
-	height: 70vh;
+	height: 100%;
 	border-radius: 5px;
-	@media (max-width: 800px) {
-		width: 70%;
-		margin-left: 15%;
-		margin-top: 0;
+
+	@media (max-width: 1000px) {
+		width: 90%;
+		margin-left: 5%;
 		margin-bottom: 0;
-		margin-right: 0;
-		height: 100%;
+		margin-right: 5%;
+	}
+	@media (max-width: 500px) {
+		width: 95%;
+		margin-left: 2.5%;
+		margin-top: 10%;
+		margin-right: 2.55%;
 	}
 `
 
